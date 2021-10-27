@@ -9,6 +9,7 @@
 ```
 npx create-react-app .
 yarn add react-icons
+yarn add react-router-dom
 yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 yarn add @craco/craco
 ```
