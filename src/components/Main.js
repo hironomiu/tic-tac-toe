@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { BsFillCircleFill, BsXLg, BsApp } from 'react-icons/bs'
+import Modal from './Modal'
 
 const Main = () => {
   const [OPEN, FIRST, SECOND] = [0, 1, 2]
+  const [modalOn, setModalOn] = useState(false)
+  const [message, setMessage] = useState('')
   // const DRAW = 3
 
   const [turn, setTurn] = useState(FIRST)
@@ -100,16 +103,26 @@ const Main = () => {
       const tmp = [...board]
       tmp[i][j] = turn
       setBoard(tmp)
-      if (isDraw()) setTimeout(() => alert('引き分け'))
-      if (isWinActual(turn)) setTimeout(() => alert(showTurn() + 'の勝利'))
+      if (isDraw())
+        setTimeout(() => {
+          setMessage('引き分け')
+          setModalOn(true)
+        })
+      if (isWinActual(turn))
+        setTimeout(() => {
+          setMessage(showTurn() + 'の勝利')
+          setModalOn(true)
+        })
       changeTurn()
     } else {
-      alert(`Not empty i:${i},j:${j}`)
+      setMessage(`Not empty i:${i},j:${j}`)
+      setModalOn(true)
     }
   }
 
   return (
     <div className="flex justify-center mt-20">
+      {modalOn ? <Modal setModalOn={setModalOn} message={message} /> : null}
       <div className="flex flex-col">
         <div className="flex justify-center text-4xl">
           <h1>三目並べ</h1>
