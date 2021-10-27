@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import { BsFillCircleFill, BsXLg, BsApp } from 'react-icons/bs'
 
 const App = () => {
-  const OPEN = 0
-  const FIRST = 1
-  const SECOND = 2
+  const [OPEN, FIRST, SECOND] = [0, 1, 2]
   // const DRAW = 3
 
   const [turn, setTurn] = useState(FIRST)
@@ -109,6 +107,7 @@ const App = () => {
       alert(`Not empty i:${i},j:${j}`)
     }
   }
+
   return (
     <div className="flex justify-center mt-20">
       <div className="flex flex-col">
