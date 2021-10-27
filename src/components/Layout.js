@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     <>
       <main>{children}</main>
       <footer className="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bottom-0">
-        <div className="">tic-toc-toe@2021</div>
+        <div className="">tic-tac-toe@2021</div>
       </footer>
     </>
   )
