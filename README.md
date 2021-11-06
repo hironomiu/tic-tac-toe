@@ -4,6 +4,14 @@
 
 ## setup
 
+```
+yarn install
+```
+
+## initial create
+
+一から作成する場合は React アプリのベースディレクトリで以下を行う
+
 ### React tailwind craco
 
 ```
@@ -74,12 +82,6 @@ npx tailwindcss init -p
 @tailwind components;
 @tailwind utilities;
 ```
-
---
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
